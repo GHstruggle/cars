@@ -1,5 +1,23 @@
 @import './normalize.scss';
 @import './config.scss';
+/* 声明清除浮动的样式 */
+.clearfix:before,
+.clearfix:after {
+content: "";
+display: table;
+}
+.clearfix:after {
+clear: both;
+}
+/* ie6 7 专门清除浮动的样式*/
+.clearfix {
+*zoom:1;
+}
+
+.line {
+  height: 1px;
+  background: #e1e1e1;
+}
 
 i[class^=iconfont] {
   display: inline-block;

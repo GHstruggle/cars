@@ -1,62 +1,55 @@
 <template>
   <div class="cars-wrap">
-    <section class="cars-item">
-      <header>
-        <h4 class="cars-logo">
-          <img src="../../assets/image/车标.png" alt="">
-          <span class="cars-name">Mustang 2019款</span>
-        </h4>
-        <p class="cars-dec">新能源汽车  5座</p>
-      </header>
-      <div class="cars-content"></div>
-      <footer></footer>
-    </section>
+    <div class="cars-wrap-swiper">
+      <swiper class="swiper" :options="swiperOption">
+        <swiper-slide>
+          <CarsItem />
+        </swiper-slide>
+        <swiper-slide>
+          <CarsItem />
+        </swiper-slide>
+        <swiper-slide>
+          <CarsItem />
+        </swiper-slide>
+        <div class="swiper-button-prev" slot="button-prev"></div>
+        <div class="swiper-button-next" slot="button-next"></div>
+      </swiper>
+    </div>
   </div>
 </template>
-
 <script>
+ import { Swiper, SwiperSlide } from 'vue-awesome-swiper';
+import "swiper/dist/css/swiper.css";
+import CarsItem from '@c/carsItem/index';
 export default {
   name: "Cars",
+  components: { Swiper, SwiperSlide, CarsItem },
+  data() {
+    return {
+      screenWidth: document.documentElement.clientWidth,//屏幕宽度
+      swiperOption: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true
+        },
+      },
+    };
+  }
 };
 </script>
 
 <style lang="scss">
-  .cars-wrap {
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 94px;
-    z-index: 100;
-  }
-  .cars-item {
-    width: 450px;
-    height: 256px;
-    margin: auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 24px;
-    @include webkit(box-shadow, 0 0 18px 0 rgba(0, 0, 0, .2));
-    @include webkit(box-sizing, border-box);
-    header {
-      display: flex;
-      h4{ flex: 1; }
-    }
-  }
-  .cars-logo {
-    img {
-      margin-right: 10px;
-      display: inline-block;
-      height: 34px;
-      vertical-align: middle;
-    }
-    span {
-      color: $color-text;
-      font-size: 16px;
-    }
-  }
-  .cars-dec {
-    line-height: 34px;
-    font-size: 14px;
-    color: $color-tips;
-  }
+.cars-wrap {
+  min-width: 930px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 94px;
+  z-index: 100;
+}
+.cars-wrap-swiper {
+  padding: 0 150px;
+}
 </style>
