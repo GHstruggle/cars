@@ -1,0 +1,10 @@
+$color-main: #34393f;
+$color-text: #34393f;
+$color-tips: #b9babb;
+@mixin webkit($type, $value) {
+  #{$type}: $value;
+  -ms-#{$type}: $value; /* IE 9 */
+  -moz-#{$type}: $value; /* Firefox */
+  -webkit-#{$type}: $value; /* Safari 和 Chrome */
+  -o-#{$type}: $value; /* Opera */
+}

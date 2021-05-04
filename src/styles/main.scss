@@ -1,0 +1,13 @@
+@import './normalize.scss';
+@import './config.scss';
+
+i[class^=iconfont] {
+  display: inline-block;
+  width: 44px;
+  height: 44px;
+  text-align: center;
+  line-height: 44px;
+  border-radius: 100px;
+  color: #ffffff;
+  background-color: $color-main;
+}
