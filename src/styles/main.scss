@@ -3,15 +3,26 @@
 /* 声明清除浮动的样式 */
 .clearfix:before,
 .clearfix:after {
-content: "";
-display: table;
+  content: "";
+  display: table;
 }
 .clearfix:after {
-clear: both;
+  clear: both;
 }
 /* ie6 7 专门清除浮动的样式*/
 .clearfix {
-*zoom:1;
+  *zoom:1;
+}
+
+.index-icon {
+  display: inline-block;
+  width: 44px;
+  height: 44px;
+  text-align: center; 
+  line-height: 44px;
+  border-radius: 100px;
+  color: #ffffff;
+  background-color: $color-main;
 }
 
 .line {
@@ -19,13 +30,8 @@ clear: both;
   background: #e1e1e1;
 }
 
-i[class^=iconfont] {
-  display: inline-block;
-  width: 44px;
-  height: 44px;
-  text-align: center;
-  line-height: 44px;
-  border-radius: 100px;
-  color: #ffffff;
-  background-color: $color-main;
-}
+.pull-left { float: left; } 
+.pull-right { float: right; } 
+
+.ps-relative { position: relative; }
+.ps-absolute { position: absolute; }

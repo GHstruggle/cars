@@ -1,11 +1,15 @@
 <template>
   <div class="navbar">
     <ul>
-      <li><i class="iconfont icon-wenhao"></i></li>
-      <li><i class="iconfont icon-sousuo"></i></li>
+      <li><i class="iconfont index-icon icon-wenhao"></i></li>
+      <li><i class="iconfont index-icon icon-sousuo"></i></li>
       <li><a href="javascript:void(0);" class="select-cars-btn">选择车辆</a></li>
-      <li><i class="iconfont icon-dingwei"></i></li>
-      <li><i class="iconfont icon-user-s"></i></li>
+      <li><i class="iconfont index-icon icon-dingwei"></i></li>
+      <li>
+        <router-link to="user">
+          <i class="iconfont index-icon icon-user-s"></i>
+        </router-link>
+      </li>
     </ul>
   </div>  
 </template>
